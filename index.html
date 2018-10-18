@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Loan Calculations </title>
+
+		<script src="res/library/Chart.min.js"> </script>
+		<!-- <link rel="stylesheet" href="res/library/bootstrap.min.css"> -->
+
+		<script src="loan.js"></script>
+		<link href="layout.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+
+		<div id="inputSection">
+			<table id="inputTable" border="4">
+				<tr>
+					<td> Loan: </td>
+					<td> $ <input type="number" id="Loan" value=762667> </td>
+				</tr>
+				<tr>
+					<td> Yearly Payments: </td>
+					<td> <input type="number" id="n_yr" value=12> </td>
+				</tr>
+				<tr>
+					<td> Term: </td>
+					<td> <input type="number" id="term" value=30> years </td>
+				</tr>
+				<tr>
+					<td> Interest: </td>
+					<td> <input type="number" id="int_yr" value=5.25> % </td>
+				</tr>
+				<tr>
+					<td> Periodic Payment: </td>
+					<td> $ <input type="number" id="P_ot" value=6130.91 disabled="disabled"> </td>
+				</tr>
+				<tr>
+					<td> Injection: </td>
+					<td> $ <input type="number" id="inj" value=20000 disabled="disabled"> every <input type="number" id="dt" value=12 disabled="disabled"> months </td>
+				</tr>
+			</table>
+
+			Minimum Payment?
+			<input type="radio" onclick="fun1()" name=min_pay id="min_payT" value="1" checked="checked"> Yes
+			<input type="radio" onclick="fun2()" name=min_pay id="min_payF" value="0"> No
+
+			<br>
+
+			Injection?
+			<input type="radio" onclick="fun3()" name=injection id="injectionT" value="1"> Yes
+			<input type="radio" onclick="fun4()" name=injection id="injectionF" value="0" checked="checked"> No
+
+			<br><br> 
+			
+			<button onclick="loan()">Click to Calculate</button>
+		</div>
+
+		<br><br>
+
+		<div id="resultSection">
+			<table id="result">
+				<tr>
+					<td>Periodic Payment:</td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>Paid in:</td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>Total Paid:</td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>Total Interest:</td>
+					<td> </td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="container" id="graphLocation1"> </div>
+
+		<div class="container" id="graphLocation2"> </div>
+
+
+		<br>
+
+		<table id="mytable">
+			<tr>
+				<th>Payment</th>
+				<th>Month</th>
+				<th>Interest</th>
+				<th>Principal</th>
+				<th>Loan Balance</th>
+			</tr>
+		</table>
+
+		<script>
+			function fun1() {
+			    document.getElementById("P_ot").disabled=true;
+			}
+
+			function fun2() {
+			    document.getElementById("P_ot").disabled=false;
+			}
+
+			function fun3() {
+			    document.getElementById("inj").disabled=false;
+			    document.getElementById("dt").disabled=false;
+			}
+
+			function fun4() {
+			    document.getElementById("inj").disabled=true;
+			    document.getElementById("dt").disabled=true;
+			}
+		</script>
+
+	</body>
+
+</html>

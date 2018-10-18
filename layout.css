@@ -1,0 +1,41 @@
+body{
+}
+
+th, td {
+	text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+/*table#input {
+	width: 50%;
+}*/
+
+table#result {
+	border: 1px solid black;
+}
+
+#Loan, #P_ot, #inj{
+	width: 15%;
+}
+
+#n_yr, #dt{
+	width: 8%;
+}
+
+input#term {
+	width: 10%;
+}
+
+input#int_yr {
+	width: 11%;
+}
+
+div#inputSection{
+	color: black;
+}
+
+div#graphLocation1 {
+	width: 800px;
+}
